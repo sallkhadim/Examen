@@ -1,0 +1,16 @@
+blog_homepage:
+    path:     /
+    defaults: { _controller: BlogBundle:Default:index }
+
+
+blog_message:
+    resource: "@BlogBundle/Resources/config/routing/message.yml"
+    prefix:   /message
+
+blog_comment:
+    resource: "@BlogBundle/Resources/config/routing/comment.yml"
+    prefix:   /comment
+
+blog_user:
+    resource: "@BlogBundle/Resources/config/routing/user.yml"
+    prefix:   /user

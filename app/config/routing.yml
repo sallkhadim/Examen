@@ -1,0 +1,19 @@
+blog_comment:
+    resource: "@BlogBundle/Controller/CommentController.php"
+    type:     annotation
+
+blog_user:
+    resource: "@BlogBundle/Controller/UserController.php"
+    type:     annotation
+
+blog_message:
+    resource: "@BlogBundle/Controller/MessageController.php"
+    type:     annotation
+
+blog:
+    resource: "@BlogBundle/Resources/config/routing.yml"
+    prefix:   /blog
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

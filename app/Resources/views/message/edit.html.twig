@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+    <h2>Modification des articles</h2>
+
+    {{ form_start(edit_form) }}
+        {{ form_row(edit_form.titre, {'label':'Titre' ,'attr':{'placeholder':'votre titre' ,'class':'form-control'}}) }}
+        {{ form_row(edit_form.description, {'label':'Description' ,'attr':{'placeholder':'votre description' ,'class':'form-control'}}) }}
+        {{ form_row(edit_form.auteur, {'label':'Auteur' ,'attr':{'placeholder':'votre auteur' ,'class':'form-control'}}) }}
+        {{ form_row(edit_form.category, {'label':'Categorie' ,'attr':{'placeholder':'votre categorie' ,'class':'form-control'}}) }}
+        {{ form_row(edit_form.etat, {'label':'Etat' ,'attr':{'placeholder':'votre etat' ,'class':'form-control'}}) }}
+        {{ form_row(edit_form.dateAt, {'label':'date' ,'attr':{'class':'form-control'}}) }}
+        {{ form_row(edit_form.file, {'label':'Image' ,'attr':{'placeholder':'votre image' ,'class':'form-control'}}) }}
+        <br><input  class="btn btn-primary" type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+            {{ form_start(delete_form) }}
+            <br><a  class="btn btn-primary" href="{{ path('message_index') }}">Back to the list</a>
+            <input  class="btn btn-danger" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+
+    </div>
+{% endblock %}

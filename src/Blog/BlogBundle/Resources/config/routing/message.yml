@@ -1,0 +1,30 @@
+message_index:
+    path:     /
+    defaults: { _controller: "BlogBundle:Message:index" }
+    methods:  GET
+
+message_show:
+    path:     /{id}/show
+    defaults: { _controller: "BlogBundle:Message:show" }
+    methods:  [GET, POST]
+
+message_new:
+    path:     /new
+    defaults: { _controller: "BlogBundle:Message:new" }
+    methods:  [GET, POST]
+
+message_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BlogBundle:Message:edit" }
+    methods:  [GET, POST]
+
+message_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BlogBundle:Message:delete" }
+    methods:  DELETE
+
+message_login:
+    path:     /login
+    defaults: { _controller: "BlogBundle:Message:login" }
+    methods:  [GET, POST]
+

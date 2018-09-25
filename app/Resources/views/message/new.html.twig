@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+    <h1>Creation d'un article</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.titre, {'label':'Titre' ,'attr':{'placeholder':'votre titre' ,'class':'form-control'}}) }}
+        {{ form_row(form.description, {'label':'Description' ,'attr':{'placeholder':'votre description' ,'class':'form-control'}}) }}
+        {{ form_row(form.auteur, {'label':'Auteur' ,'attr':{'placeholder':'votre auteur' ,'class':'form-control'}}) }}
+        {{ form_row(form.category, {'label':'Categorie' ,'attr':{'placeholder':'votre category' ,'class':'form-control'}}) }}
+        {{ form_row(form.etat, {'label':'Etat' ,'attr':{'placeholder':'Repondre par oui ou non','class':'form-control'}}) }}
+        {{ form_row(form.dateAt, {'label':'date' ,'attr':{'class':'form-control col-3'}}) }}
+        {{ form_row(form.file, {'label':'file' ,'attr':{'class':'form-control col-3'}}) }}
+
+       <br> <input type="submit" class="btn btn-success" value="Create" />
+    {{ form_end(form) }} 
+
+         <br>   <a  class="btn btn-primary" href="{{ path('message_index') }}">Back to the list</a>
+
+    </div>
+{% endblock %}
+

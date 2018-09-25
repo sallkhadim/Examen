@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+    <h1>Creation de compte</h1>
+
+    {{ form_start(form) }}
+        {{ form_row(form.username, {'label':'Username' ,'attr':{'placeholder':'votre username' ,'class':'form-control'}}) }}
+        {{ form_row(form.email, {'label':'Email' ,'attr':{'placeholder':'votre email' ,'class':'form-control'}}) }}
+        {{ form_row(form.password, {'label':'Mot de passe' ,'attr':{'placeholder':'votre mdp' ,'class':'form-control'}}) }}
+        {{ form_row(form.confirm_password, {'label':'confirm password' ,'attr':{'placeholder':'votre  confirmation de mdp' ,'class':'form-control'}}) }}
+        {{ form_row(form.sexe, {'label':'Sexe' ,'attr':{'placeholder':'votre sexe' ,'class':'form-control'}}) }}
+        {{ form_row(form.telephone, {'label':'Telephone' ,'attr':{'placeholder':'telephone','class':'form-control'}}) }}
+        {{ form_row(form.datenaissance, {'label':'Date de naissance' ,'attr':{'class':'form-control col-3'}}) }}
+        {# {{ form_row(form.file, {'label':'file' ,'attr':{'class':'form-control col-3'}}) }} #}
+
+       <br> <input type="submit" class="btn btn-success" value="Inscription !" />
+    {{ form_end(form) }} 
+
+         {# <br>   <a  class="btn btn-primary" href="{{ path('message_index') }}">Back to the list</a> #}
+
+    </div>
+{% endblock %}
