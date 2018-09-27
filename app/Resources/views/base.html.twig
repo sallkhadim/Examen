@@ -10,9 +10,6 @@
         <style>
         .jumbotron {
             background-image: url("{{ asset('images/')}}image.jpg");
-            text-align: center;
-            color: white;
-            height: 20%;
         }
         body {
             position: relative;
@@ -36,18 +33,21 @@
                         <a class="nav-link" href="{{ path('message_index') }}">Mes articles <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" style="color:white" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Categoiries
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Politique</a>
-                        <a class="dropdown-item" href="#">Sport</a>
-                        <a class="dropdown-item" href="#">Developpement</a>
-                        <a class="dropdown-item" href="#">Securite</a>
+                            <a class="dropdown-item" href="#">Politique</a>
+                            <a class="dropdown-item" href="#">Sport</a>
+                            <a class="dropdown-item" href="#">Developpement</a>
+                            <a class="dropdown-item" href="#">Securite</a>
                         </div>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
+                    <li class="nav-item active my-2 my-lg-0">
+                        <a class="nav-link" href="{{ path('user_login') }}">Connexion<span class="sr-only">(current)</span></a>
+                    </li>
                     <li class="nav-item active my-2 my-lg-0">
                         <a class="nav-link" href="{{ path('user_new') }}">Inscription<span class="sr-only">(current)</span></a>
                     </li>
@@ -97,6 +97,7 @@
 
 
         {% block body %}
+        <span class="jumbotron"></span>
         {% endblock %}
         {% block javascripts %}{% endblock %}
 

@@ -8,7 +8,6 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-//use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 /**
@@ -37,19 +36,22 @@ class UserController extends Controller
 
     /**
      * @Route("/login", name="user_login")
-     *@Method({"GET", "POST"})
      */
     public function loginAction(Request $request)
     {
-//        $errors = $auth->getLastAuthenticationError();
-//        $lastUsername = $auth->getLastUsername();
-//        , AuthenticationUtils $auth
+        $user = new User();
+        $form = $this->createForm('Blog\BlogBundle\Form\UserType', $user);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $errors = $authenticationUtils->getLastAuthenticationError();
+            // $lastUsername = $authenticationUtils->getLastUsername();
+            // AuthenticationUtils $authenticationUtils
+            return $this->render('user/index.html.twig', array(
+                'users' => $user,
+            ));
+        }
 
         return $this->render('user/login.html.twig');
-//            , [
-//            'error'  =>$errors,
-//            'last_username'  => $lastUsername,
-//        ]);
     }
 
     /**
