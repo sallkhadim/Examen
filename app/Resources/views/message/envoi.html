@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>reg</title>
+	<style type="text/css">
+		#progress-bar {
+		  margin-top: 1em;
+		}
+	</style>
+</head>
+<body>
+<div id="progress-wrapper">
+  <button id="progress-bar-trigger">Run</button>
+  <div id="progress-bar" style="background-color: blue; width: 0%;">&nbsp;</div>
+  <div id="progress-bar-message">Waiting for progress to start...</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	function updateProgress(progressBarElement, progressBarMessageElement, progress) {
+  progressBarElement.style.width = progress.percent + "%";
+  progressBarMessageElement.innerHTML = progress.current + ' of ' + progress.total + ' processed.';
+			}
+
+			var trigger = document.getElementById('progress-bar-trigger');
+			trigger.addEventListener('click', function(e) {
+			  var bar = document.getElementById("progress-bar");
+			  var barMessage = document.getElementById("progress-bar-message");
+			  for (var i = 0; i < 11; i++) {
+			    setTimeout(updateProgress, 500 * i, bar, barMessage, {
+			      percent: 10 * i,
+			      current: 10 * i,
+			      total: 100
+			    })
+			  }
+			})
+</script>
+</body>
+</html>

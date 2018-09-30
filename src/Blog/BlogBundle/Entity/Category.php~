@@ -33,7 +33,7 @@ class Category
      *
      * @ORM\OneToMany(targetEntity = "Blog\BlogBundle\Entity\Message" , mappedBy="category")
      */
-    private $message;
+    public $message;
 
     public function __construct()
     {
@@ -72,5 +72,39 @@ class Category
     public function getNom()
     {
         return $this->nom;
+    }
+
+    /**
+     * Add message
+     *
+     * @param \Blog\BlogBundle\Entity\Message $message
+     *
+     * @return Category
+     */
+    public function addMessage(\Blog\BlogBundle\Entity\Message $message)
+    {
+        $this->message[] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Remove message
+     *
+     * @param \Blog\BlogBundle\Entity\Message $message
+     */
+    public function removeMessage(\Blog\BlogBundle\Entity\Message $message)
+    {
+        $this->message->removeElement($message);
+    }
+
+    /**
+     * Get message
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getMessage()
+    {
+        return $this->message;
     }
 }

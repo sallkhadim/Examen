@@ -8,7 +8,13 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
-use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+
+            // , ChoiceType::class, array(
+            //         'choices' => array(
+            //             'OUI' => 'True',
+            //             'Non' => 'False', ),
+            //      )
 
 class UserType extends AbstractType
 {
@@ -17,7 +23,9 @@ class UserType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('username')->add('email', EmailType::class)->add('password', PasswordType::class)->add('confirm_password', PasswordType::class)->add('sexe')->add('telephone', IntegerType::class)->add('datenaissance');
+        $builder->add('username')->add('email', EmailType::class)->add('password', PasswordType::class)->add('confirm_password', PasswordType::class)->add('telephone', IntegerType::class)->add('datenaissance')->add('sexe', ChoiceType::class, array(
+    'choices' => array('Feminin' => true, 'Masculin' => false),
+));
     }
 
     /**

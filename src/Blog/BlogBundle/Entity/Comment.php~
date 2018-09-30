@@ -33,7 +33,7 @@ class Comment
      *
      * @ORM\Column(name="auteur", type="string", length=100)
      */
-    private $auteur;
+    public $auteur;
 
     /**
      * @var string
@@ -101,7 +101,7 @@ class Comment
     }
 
     /**
-     * Set message
+     * Set message.
      *
      * @param \Blog\BlogBundle\Entity\Message $message
      *
@@ -115,7 +115,7 @@ class Comment
     }
 
     /**
-     * Get message
+     * Get message.
      *
      * @return \Blog\BlogBundle\Entity\Message
      */

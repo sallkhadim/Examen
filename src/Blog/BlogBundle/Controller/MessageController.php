@@ -34,6 +34,75 @@ class MessageController extends Controller
     }
 
     /**
+     * Lists all message entities.
+     *
+     * @Route("/", name="message_politique")
+     * @Method("GET")
+     */
+    public function politiqueAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $messages = $em->getRepository('BlogBundle:Message')->findAll();
+
+        return $this->render('message/politique.html.twig', array(
+            'messages' => $messages,
+        ));
+    }
+
+        /**
+         * Lists all message entities.
+         *
+         * @Route("/", name="message_deve")
+         * @Method("GET")
+         */
+        public function deveAction()
+        {
+            $em = $this->getDoctrine()->getManager();
+
+            $messages = $em->getRepository('BlogBundle:Message')->findAll();
+
+            return $this->render('message/deve.html.twig', array(
+                'messages' => $messages,
+            ));
+        }
+
+    /**
+     * Lists all message entities.
+     *
+     * @Route("/", name="message_sport")
+     * @Method("GET")
+     */
+    public function sportAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $messages = $em->getRepository('BlogBundle:Message')->findAll();
+
+        return $this->render('message/sport.html.twig', array(
+            'messages' => $messages,
+        ));
+    }
+
+    /**
+     * Lists all message entities.
+     *
+     * @Route("/", name="message_securite")
+     * @Method("GET")
+     */
+    public function securiteAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $messages = $em->getRepository('BlogBundle:Message')->findAll();
+
+        return $this->render('message/securite.html.twig', array(
+            'messages' => $messages,
+        ));
+    }
+
+
+    /**
      * Creates a new message entity.
      *
      * @Route("/new", name="message_new")
@@ -147,7 +216,7 @@ class MessageController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createDeleteForm(Message $message)
+    public function createDeleteForm(Message $message)
     {
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('message_delete', array('id' => $message->getId())))

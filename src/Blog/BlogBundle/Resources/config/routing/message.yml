@@ -3,6 +3,26 @@ message_index:
     defaults: { _controller: "BlogBundle:Message:index" }
     methods:  GET
 
+message_politique:
+    path:     /politique
+    defaults: { _controller: "BlogBundle:Message:politique" }
+    methods:  GET
+
+message_deve:
+    path:     /developement
+    defaults: { _controller: "BlogBundle:Message:deve" }
+    methods:  GET
+
+message_sport:
+    path:     /sport
+    defaults: { _controller: "BlogBundle:Message:sport" }
+    methods:  GET
+
+message_securite:
+    path:     /securite
+    defaults: { _controller: "BlogBundle:Message:securite" }
+    methods:  GET
+
 message_show:
     path:     /{id}/show
     defaults: { _controller: "BlogBundle:Message:show" }

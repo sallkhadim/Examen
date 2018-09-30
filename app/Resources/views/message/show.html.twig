@@ -11,18 +11,21 @@
             {{ message.description }}</p></article><hr>
             </div>
             <div class="col-md-12 gap10">
-            {% for comments in comments %}
-               <h4>Auteur:<i> {{ comments.auteur }}</i></h4>
-               <p>Commentaire: {{ comments.description }}</p>
+            {% for comments in comments  %}
+               <h4><b>Auteur:</b><i> {{ comments.auteur }}</i></h4>
+               <p><b>Commentaire:</b> {{ comments.description }}</p>
             {% endfor %}
 
             {# formulaire  commentaire #}
-            {{ form_start(comment1) }}
-            {{ form_row(comment1.auteur, {'label':'Auteur' ,'attr':{'placeholder':'Nom de l auteur' ,'class':'form-control'}}) }}
-            {{ form_row(comment1.description, {'label':'Description' ,'attr':{'placeholder':'votre description' ,'class':'form-control'}})}}
-               <br> <input class="btn btn-success" type="submit" value="Commentaire">
-            {{ form_end(comment1)}}
-            <br> 
+                {#<p class="btn sh btn-success" style="margin-left: 8%">commenter la publication </p><br>#}
+                {#<div class="com">#}
+                    {{ form_start(comment1) }}
+                    {{ form_row(comment1.auteur, {'label':'Auteur' ,'attr':{'placeholder':'Nom de l auteur' ,'class':'form-control col-3'}}) }}
+                    {{ form_row(comment1.description, {'label':'Description' ,'attr':{'placeholder':'votre description' ,'class':'form-control'}})}}
+                       <br> <input class="btn btn-success" type="submit" value="Commentaire">
+                    {{ form_end(comment1)}}
+                {#</div>#}
+            <br> <br>
 
             {{ form_start(delete_form) }}
                 <a class="btn btn-primary" href="{{ path('message_index') }}">Retour aux articles</a>
@@ -30,7 +33,18 @@
                 <a class="btn btn-primary" href="{{ path('message_edit', { 'id': message.id }) }}">Modifier</a>
             {{ form_end(delete_form) }}
             </div>
+        </div><br><br><br><br>
         </div>
-        </div>
+
+         {#<script>#}
+             {#$(document).ready(function () {#}
+                 {#$('.com').hide();#}
+                 {#$('.sh').click(function () {#}
+                     {#$('.com').slideDown(1500);#}
+                     {#$('.sh').hide();#}
+
+                 {#});#}
+             {#});#}
+         {#</script>#}
 
 {% endblock %} 

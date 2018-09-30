@@ -340,4 +340,12 @@ class Message
     {
         return $this->comments;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
 }

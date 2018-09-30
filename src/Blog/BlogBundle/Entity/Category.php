@@ -33,7 +33,7 @@ class Category
      *
      * @ORM\OneToMany(targetEntity = "Blog\BlogBundle\Entity\Message" , mappedBy="category")
      */
-    private $message;
+    public $message;
 
     public function __construct()
     {
