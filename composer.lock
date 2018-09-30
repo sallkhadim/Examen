@@ -13,6 +13,7 @@
                 "type": "git",
                 "url": "https://github.com/composer/ca-bundle.git",
                 "reference": "46afded9720f40b9dc63542af4e3e43a1177acb0"
+                
             },
             "dist": {
                 "type": "zip",

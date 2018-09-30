@@ -29,6 +29,7 @@ class CommentController extends Controller
 
         return $this->render('comment/index.html.twig', array(
             'comments' => $comments,
+            
         ));
     }
 
