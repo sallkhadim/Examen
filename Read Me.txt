@@ -1,0 +1,5 @@
+TDSIBlog comme nom et il sert à creer , commenteret publier des articles 
+Pour un bon fonctionnement il faut importer la base de donne "l3tdsi_crypto"
+et faire la mise  à jour de la base
+
+KHADIM SALL 

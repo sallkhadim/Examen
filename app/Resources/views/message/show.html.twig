@@ -17,11 +17,11 @@
             {% endfor %}
 
             {# formulaire  commentaire #}
-                {#<p class="btn sh btn-success" style="margin-left: 8%">commenter la publication </p><br>#}
+                {#<p class="btn sh btn-success" style="margin-left: 8%">commentaire </p><br>#}
                 {#<div class="com">#}
                     {{ form_start(comment1) }}
                     {{ form_row(comment1.auteur, {'label':'Auteur' ,'attr':{'placeholder':'Nom de l auteur' ,'class':'form-control col-3'}}) }}
-                    {{ form_row(comment1.description, {'label':'Description' ,'attr':{'placeholder':'votre description' ,'class':'form-control'}})}}
+                    {{ form_row(comment1.description, {'label':'Description' ,'attr':{'placeholder':' description' ,'class':'form-control'}})}}
                        <br> <input class="btn btn-success" type="submit" value="Commentaire">
                     {{ form_end(comment1)}}
                 {#</div>#}

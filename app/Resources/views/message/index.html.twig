@@ -13,7 +13,7 @@
                         <h3>{{ message.titre }}</h3>
                         <img src="{{ asset('images/') }}{{ message.nomImage }}" alt="post img" style="width: 260px;height: 173px" class="pull-left zoom img-responsive thumb margin10 img-thumbnail">
                         <em>Extrait de l'article <a href="#" target="_blank"> {{ message.titre }}  </a></em><span> &nbsp;&nbsp;&nbsp;publie le {{ message.dateAt|date("d-m-Y") }} par <b> {{ message.auteur }}</b>  </span><br>
-                        {{ message.description |slice(0, 300)  }}...<a class="btn btn-success"  href="{{ path('message_show', { 'id': message.id }) }}">  lire la suite</a></p></article><hr>
+                        {{ message.description |slice(0, 300)  }}...<a class="btn "  href="{{ path('message_show', { 'id': message.id }) }}">  lire la suite</a></p></article><hr>
                         </div>
                     </div>
                     </div>

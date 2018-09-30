@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="container">
-    <h2>Modification des articles</h2>
+    <h2>Modifier des articles</h2>
 
     {{ form_start(edit_form) }}
         {{ form_row(edit_form.titre, {'label':'Titre' ,'attr':{'placeholder':'votre titre' ,'class':'form-control'}}) }}
@@ -16,7 +16,7 @@
     {{ form_end(edit_form) }}
 
             {{ form_start(delete_form) }}
-            <br><a  class="btn btn-primary" href="{{ path('message_index') }}">Back to the list</a>
+            <br><a  class="btn btn-primary" href="{{ path('message_index') }}">Retour</a>
             <input  class="btn btn-danger" type="submit" value="Delete"><br><br>
             {{ form_end(delete_form) }}
 
